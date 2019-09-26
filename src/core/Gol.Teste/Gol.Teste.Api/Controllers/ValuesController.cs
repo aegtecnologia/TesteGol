@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Gol.Teste.Domain.Contratos.Repositorios;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Gol.Teste.Api.Controllers
@@ -10,10 +11,13 @@ namespace Gol.Teste.Api.Controllers
     [ApiController]
     public class ValuesController : ControllerBase
     {
+       
         // GET api/values
         [HttpGet]
-        public ActionResult<IEnumerable<string>> Get()
+        public async Task<IEnumerable<string>> Get()
         {
+
+
             return new string[] { "value1", "value2" };
         }
 
@@ -28,6 +32,7 @@ namespace Gol.Teste.Api.Controllers
         [HttpPost]
         public void Post([FromBody] string value)
         {
+            
         }
 
         // PUT api/values/5
