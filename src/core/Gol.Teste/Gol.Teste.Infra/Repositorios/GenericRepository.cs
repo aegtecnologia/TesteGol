@@ -21,6 +21,10 @@ namespace Gol.Teste.Infra.Repositorios
             _dbContext = dbContext ?? throw new ArgumentNullException(nameof(dbContext));
         }
 
+        public virtual async Task SaveChanges()
+        {
+            await _dbContext.SaveChangesAsync();
+        }
         public virtual async Task<TEntity> Get(int id)
         {
             return await _dbContext.Set<TEntity>()

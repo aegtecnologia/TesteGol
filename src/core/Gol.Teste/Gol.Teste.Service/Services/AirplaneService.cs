@@ -32,6 +32,7 @@ namespace Gol.Teste.Service.Services
         public async Task Excluir(int id)
         {
             await _repository.Delete(id);
+            await _repository.SaveChanges();
         }
 
         public async Task Salvar(Airplane aviao)
@@ -40,6 +41,8 @@ namespace Gol.Teste.Service.Services
                 await _repository.Create(aviao);
             else
                 await _repository.Update(aviao);
+
+            await _repository.SaveChanges();
         }
     }
 }

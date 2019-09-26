@@ -18,6 +18,7 @@ namespace Gol.Teste.Domain.Contratos.Repositorios
         Task Update(TEntity entity);
         Task Delete(int id);
 
+        Task SaveChanges();
         Task<int> Count();
     }
 }

@@ -1,11 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Gol.Teste.Domain.Contratos.Servicos;
+﻿using Gol.Teste.Domain.Contratos.Servicos;
 using Gol.Teste.Domain.Entidades;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace Gol.Teste.Api.Controllers
 {
@@ -23,10 +20,22 @@ namespace Gol.Teste.Api.Controllers
         [HttpGet]
         public async Task<IEnumerable<Airplane>> Get()
         {
-
             var res = await _service.BuscarTodos();
-
             return res;
+        }
+
+        // POST api/values
+        [HttpPost]
+        public async Task Post([FromBody] Airplane aviao)
+        {
+            await _service.Salvar(aviao);
+        }
+
+        // DELETE api/values/5
+        [HttpDelete("{id}")]
+        public async Task Delete(int id)
+        {
+            await _service.Excluir(id);
         }
     }
 }
