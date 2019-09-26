@@ -1,9 +1,13 @@
-Pendencias:
+Pendências:
 Incluir frontend com angular 6;
 
 Melhorias:
-Incluir validação de dados com fluent validation;
-Incluir classes de request e response para os serviços da api;
-Incluir dados de conexão com o banco de dados no appsettings;
-Incluir classe generica de serviços do mesmo modo que foi feito com os repositorios;
+1 - Incluir validação de dados de entrada com fluent validation;
+2 - Incluir classes de request e response para os serviços da api;
+3 - Incluir indicação das classes de resquest e response em cada endpoint da api;
+4 - Incluir tratamento de exceções;
+5 - Incluir teste unitario;
+6 - Incluir dados de conexão com o banco de dados no appsettings;
+7 - Incluir classe generica de serviços do mesmo modo que foi feito com os repositorios;
+8 - Criar branch´s de dev e release;
 
