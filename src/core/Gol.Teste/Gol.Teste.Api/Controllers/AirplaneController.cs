@@ -1,5 +1,6 @@
 ﻿using Gol.Teste.Domain.Contratos.Servicos;
 using Gol.Teste.Domain.Entidades;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -18,10 +19,14 @@ namespace Gol.Teste.Api.Controllers
 
         // GET api/values
         [HttpGet]
-        public async Task<IEnumerable<Airplane>> Get()
+        [Produces("application/json")]
+        [ProducesResponseType(typeof(IEnumerable<Airplane>), StatusCodes.Status201Created)]
+        [ProducesResponseType(typeof(IEnumerable<Airplane>), StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(typeof(IEnumerable<Airplane>), StatusCodes.Status500InternalServerError)]
+        public async Task<ActionResult> Get()
         {
             var res = await _service.BuscarTodos();
-            return res;
+            return Ok(res);
         }
 
         // POST api/values
